@@ -69,13 +69,6 @@ describe("Multisig Contract", () => {
             expect(await multisigContract.ownerSigned(0, address1.address)).to.be.true;
         });
 
-        // it("Should prevent non-owners from signing", async () => {
-        //     const { multisigContract, signers } = await loadFixture(deployMultisigFixture);
-        //     const nonOwner = signers[19]; // Assuming 20th signer is a non-participating address
-
-        //     await expect(multisigContract.connect(nonOwner).signTransaction(0))
-        //         .to.be.revertedWithCustomError(multisigContract, "Unauthorised");
-        // });
 
         it("Should execute a transaction when required signatures are met", async () => {
             const { multisigContract, signers } = await loadFixture(deployMultisigFixture);
