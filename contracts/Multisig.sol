@@ -16,7 +16,7 @@ contract Multisig {
 
     Signatory[] public signatory;
 
-    constructor(address[20] memory _isOwner, uint256 _numToSign) {
+    constructor(address[2] memory _isOwner, uint256 _numToSign) {
         if (_isOwner.length == 0) revert NotAnOwner();
         if (_numToSign == 0 || _numToSign > _isOwner.length)
             revert InvalidNumOfSigners();
